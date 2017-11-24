@@ -21,6 +21,14 @@ run_suite() {
   assert_grep '1 2 3 + +' '=> 6'
   assert_grep '3 2 - 1 +' '=> 2'
   assert_grep '1 5 3 / 2 6 + - 4 * 8 + *' '=> -20'
+
+  # multiple calculations
+  input="$(printf '%s\n%s\n' '1 3 +' '16 2 /')"
+  expected="$(printf '%s\n%s\n' '=> 4' '=> 8')"
+  assert_grep "${input}" "${expected}"
+
+  # no calculations
+  assert_grep "" ""
 }
 
 run_suite
