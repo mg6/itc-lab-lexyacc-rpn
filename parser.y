@@ -25,24 +25,38 @@
 	int yylex();
 	extern FILE* yyin;
 	
-	
-	
-
-
-	
-
+	int calculate(int a, int op, int b) {
+		switch (op) {
+			case '+':
+				return a + b;
+			case '-':
+				return a - b;
+			case '*':
+				return a * b;
+			case '/':
+				return a / b;
+			default:
+				return 0;
+		}
+	}
 	
 %}
 
-
+%token INT
 	
 %%
 
-head: head ';'                  {printf("%s", $$);} 
-    |
+prog: prog expr '\n' { printf("=> %d\n", $2); }
+	| /* nothing */
 	;
 
-	
+expr: expr expr operator { $$ = calculate($1, $3, $2); }
+	| INT { $$ = $1; }
+	;
+
+operator: '+' | '-' | '*' | '/'
+	;
+
 %%
 
 void yyerror(char *s) {
