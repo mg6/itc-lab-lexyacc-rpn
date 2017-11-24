@@ -29,7 +29,7 @@ assert_grep() {
   actual="$(./lab <<< "$input")" || err=$?
 
   if ! [ "$err" -eq 0 ]; then
-    test_fail "$input" "<non-zero exit>" "$expected"
+    test_fail "$input" "<exit code=${err}>" "$expected"
   fi
 
   grep -Eq "^${expected}$" <<< "${actual}" \
