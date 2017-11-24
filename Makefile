@@ -9,7 +9,10 @@ lex.yy.c: lexer.l parser.h
 lab: lex.yy.c parser.c parser.h
 	cc $^ -o $@
 
+test: lab
+	./test.sh
+
 clean:
 	- rm lab parser.c parser.h lex.yy.c
 
-.PHONY: all clean
+.PHONY: all clean test
