@@ -47,6 +47,7 @@
 %%
 
 prog: prog expr '\n' { printf("=> %d\n", $2); }
+	| '\n'
 	| /* nothing */
 	;
 
