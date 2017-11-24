@@ -305,6 +305,11 @@ __pycache__/
 OpenCover/
 
 # Custom
+lab
 lekser.c
 parser.c
 parser.h
+
+# Flex/Bison artifacts
+*.yy.c
+*.tab.[ch]
