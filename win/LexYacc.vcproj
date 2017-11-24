@@ -182,11 +182,11 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath=".\lekser.c"
+				RelativePath="..\lexer.c"
 				>
 			</File>
 			<File
-				RelativePath=".\lekser.l"
+				RelativePath="..\lexer.l"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -195,21 +195,21 @@
 						Name="VCCustomBuildTool"
 						Description="Custom build step: Lex"
 						CommandLine="flex -o$(InputName).c $(InputFileName)&#x0D;&#x0A;"
-						AdditionalDependencies="parser.y"
+						AdditionalDependencies="..\parser.y"
 						Outputs="$(InputName).c"
 					/>
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath=".\parser.c"
+				RelativePath="..\parser.c"
 				>
 			</File>
 			<File
-				RelativePath=".\parser.h"
+				RelativePath="..\parser.h"
 				>
 			</File>
 			<File
-				RelativePath=".\parser.y"
+				RelativePath="..\parser.y"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"

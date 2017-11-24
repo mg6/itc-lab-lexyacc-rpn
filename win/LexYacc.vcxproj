@@ -101,14 +101,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="lekser.l">
+    <CustomBuild Include="..\lexer.l">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Custom build step: Lex</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">flex -o%(Filename).c %(Filename)%(Extension)
 </Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">parser.y;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\parser.y;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(Filename).c;%(Outputs)</Outputs>
     </CustomBuild>
-    <CustomBuild Include="parser.y">
+    <CustomBuild Include="..\parser.y">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Custom build step: Yacc</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">bison  -d  -o%(Filename).c %(Filename)%(Extension)
 </Command>
@@ -116,11 +116,11 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="lekser.c" />
-    <ClCompile Include="parser.c" />
+    <ClCompile Include="..\lexer.c" />
+    <ClCompile Include="..\parser.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="parser.h" />
+    <ClInclude Include="..\parser.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

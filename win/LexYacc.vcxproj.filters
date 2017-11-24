@@ -15,23 +15,23 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="lekser.l">
+    <CustomBuild Include="..\lexer.l">
       <Filter>Source Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="parser.y">
+    <CustomBuild Include="..\parser.y">
       <Filter>Source Files</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="lekser.c">
+    <ClCompile Include="..\lexer.c">
       <Filter>Resource Files</Filter>
     </ClCompile>
-    <ClCompile Include="parser.c">
+    <ClCompile Include="..\parser.c">
       <Filter>Resource Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="parser.h">
+    <ClInclude Include="..\parser.h">
       <Filter>Resource Files</Filter>
     </ClInclude>
   </ItemGroup>
