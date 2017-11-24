@@ -115,6 +115,13 @@
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">o%(Filename).c; o%(Filename).h;%(Outputs)</Outputs>
     </CustomBuild>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="lekser.c" />
+    <ClCompile Include="parser.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="parser.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
